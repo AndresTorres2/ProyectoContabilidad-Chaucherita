@@ -10,9 +10,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Detalles de la Categoría</h1>
+            <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+            <div class="title-header">
+                <h1>Detalles de la Categoría</h1>
+            </div>
+            <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+        </div>
+
+        <div class="filtro-fecha">
             <%@include file="../template/fecha.html" %>
         </div>
+        
 
         <div class="table-container">
             <table>
@@ -31,6 +39,7 @@
             </table>
         </div>
 
+    
         <div class="table-responsive">
             <h2>Movimientos Asociados</h2>
             <table>
