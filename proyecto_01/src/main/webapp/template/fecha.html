@@ -1,0 +1,13 @@
+	<form action="ContabilidadController?ruta=filter" method="post">
+		<input type="hidden" name="origen" value="${origen}"> <!-- Valor dinámico para origen -->
+		<input type="hidden" name="cuentaId" value="${cuenta.idAccount}">
+		<input type="hidden" name="categoriaId" value="${categoria.idCategory}">
+	    <label for="fechaInicio">Fecha Inicio:</label>
+	    <input type="datetime-local" id="fechaInicio" name="fechaInicio" value="${fechaInicio}" max="${currentDate}"  />
+	
+	    <label for="fechaFin">Fecha Fin:</label>
+	    <input type="datetime-local" id="fechaFin" name="fechaFin" value="${fechaFin}" max="${currentDate}" />
+	
+	    <input type="submit" value="Filtrar" />
+	</form>
+	
