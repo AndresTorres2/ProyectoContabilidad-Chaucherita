@@ -74,12 +74,40 @@ body {
     gap: 10px;
 }
 
-.actions-container a {
-    background-color: #4a90e2;
+#new-income{
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+}
+
+#new-income:hover{
+    background-color: #3d8c3f;
+}
+
+#new-outcome{
+    background-color: #E94B3C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#new-outcome:hover{
+    background-color: #cc4034;
+}
+
+#new-trans{
+    background-color: #ef8031;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#new-trans:hover{
+    background-color: #d5742e;
 }
 
 .actions-container a:hover {
