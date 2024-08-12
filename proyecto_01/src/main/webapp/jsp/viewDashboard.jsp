@@ -18,7 +18,7 @@
                 <p style="color: green;">${param.mensaje}</p>
             </c:if>
         </div>
-        <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+        <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
  
     </div>
 
