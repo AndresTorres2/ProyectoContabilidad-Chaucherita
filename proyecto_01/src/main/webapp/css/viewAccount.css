@@ -12,6 +12,25 @@ body {
 
 .header {
     margin-bottom: 20px;
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.header img{
+    padding: 10px;
+    height: 125px;
+    width: auto;
+}
+
+.title-header {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .table-container {

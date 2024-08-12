@@ -5,8 +5,31 @@ body {
     color: #333;
 }
 
-.encabezado {
+.encabezado{
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.encabezado img{
+    padding: 10px;
+    height: 125px;
+    width: auto;
+}
+
+.title-encabezado {
+    width: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro-fecha{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
@@ -50,9 +73,60 @@ th, td {
     text-align: center;
 }
 
-th {
+#title-consolidated {
+    color: #306199;
+}
+
+.th-consolidated {
     background-color: #4a90e2;
     color: white;
+}
+
+.tr-consolidated a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#title-income {
+    color: #2e7030;
+}
+
+.th-income{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tr-income a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#title-outcome {
+    color: #812921;
+}
+
+.th-outcome{
+    background-color: #cc3f32;
+    color: white;
+}
+
+.tr-outcome a {
+    color: #cc3f32;
+    text-decoration: none;
+}
+
+#title-trans {
+    color: #cc5d0d;
+}
+
+.th-trans{
+    background-color: #f28232;
+    color: white;
+}
+
+.tr-trans a {
+    color: #f28232;
+    text-decoration: none;
 }
 
 td {
@@ -65,10 +139,12 @@ td {
     margin-top: 10px;
 }
 
-a {
-    color: #007bff;
+.editar{
+    color: #4a90e2;
+    cursor: pointer;
     text-decoration: none;
 }
+
 
 a:hover {
     text-decoration: underline;
@@ -77,9 +153,10 @@ a:hover {
 .eliminarMovimiento {
     color: red;
     cursor: pointer;
+    text-decoration: none;
 }
 
-button {
+#create-Account {
     background-color: #4a90e2;
     color: white;
     border: none;
@@ -90,8 +167,38 @@ button {
     font-size: 14px;
 }
 
-button:hover {
+#create-Account:hover {
     background-color: #357abd;
+}
+
+#create-Category {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#create-Category:hover {
+    background-color: #3d8c3f;
+}
+
+#log-out {
+    background-color: #E94B3C;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#log-out:hover {
+    background-color: #cc4034;
 }
 
 .footer-buttons {
