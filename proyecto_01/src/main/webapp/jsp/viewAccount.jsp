@@ -10,7 +10,7 @@
 <body>
 
     <div class="container">
-        
+
         <div class="header">
             <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
             <div class="title-header">
@@ -20,14 +20,19 @@
                     <p style="color: green;">${param.mensaje}</p>
                 </c:if>
             </div>
-            <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+            <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
         </div>
 
         <div class="filtro-fecha">
             <%@include file="../template/fecha.html" %>
         </div>
 
-        
+        <div class="actions-container">
+            <a id="new-income" href="ContabilidadController?ruta=registerFormIncome&cuentaId=${cuenta.idAccount}">Registrar un Nuevo Ingreso</a>
+            <a id="new-outcome" href="ContabilidadController?ruta=registerFormOutcome&cuentaId=${cuenta.idAccount}">Registrar un Nuevo Egreso</a>
+            <a id="new-trans" href="ContabilidadController?ruta=registerFormTransference&cuentaId=${cuenta.idAccount}">Registrar una Nueva Transferencia</a>
+            <a id="new-outcome" href="ContabilidadController?ruta=showdashboard">Regresar</a>
+        </div>
 
         <div class="table-container">
             <h2>Cuenta: ${cuenta.nameAccount}</h2>
@@ -78,12 +83,6 @@
             </table>
         </div>
 
-        <div class="actions-container">
-            <a href="ContabilidadController?ruta=registerFormIncome&cuentaId=${cuenta.idAccount}">Registrar un Nuevo Ingreso</a>
-            <a href="ContabilidadController?ruta=registerFormOutcome&cuentaId=${cuenta.idAccount}">Registrar un Nuevo Egreso</a>
-            <a href="ContabilidadController?ruta=registerFormTransference&cuentaId=${cuenta.idAccount}">Registrar una Nueva Transferencia</a>
-            <a href="ContabilidadController?ruta=showdashboard">Regresar</a>
-        </div>
     </div>
 
 <script type="text/javascript">
