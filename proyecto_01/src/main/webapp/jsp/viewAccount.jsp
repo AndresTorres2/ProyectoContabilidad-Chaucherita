@@ -10,15 +10,24 @@
 <body>
 
     <div class="container">
+        
         <div class="header">
-            <h1>Detalles de la Cuenta</h1>
+            <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+            <div class="title-header">
+                <h1>Detalles de la Cuenta</h1>
+                <!-- Mostrar mensaje de éxito si está presente -->
+                <c:if test="${param.mensaje != null}">
+                    <p style="color: green;">${param.mensaje}</p>
+                </c:if>
+            </div>
+            <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+        </div>
+
+        <div class="filtro-fecha">
             <%@include file="../template/fecha.html" %>
         </div>
 
-        <!-- Mostrar mensaje de éxito si está presente -->
-        <c:if test="${param.mensaje != null}">
-            <p style="color: green;">${param.mensaje}</p>
-        </c:if>
+        
 
         <div class="table-container">
             <h2>Cuenta: ${cuenta.nameAccount}</h2>
