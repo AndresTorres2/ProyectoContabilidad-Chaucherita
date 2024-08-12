@@ -5,24 +5,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/viewDashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/viewDashboard.css">
 </head>
 <body>
+    <br>
+    
     <div class="encabezado">
-        <h1>Estado de la Contabilidad</h1>
-        <c:if test="${param.mensaje != null}">
-            <p style="color: green;">${param.mensaje}</p>
-        </c:if>
+        <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+        <div class="title-encabezado">
+            <h1>Estado de la Contabilidad</h1>
+            <c:if test="${param.mensaje != null}">
+                <p style="color: green;">${param.mensaje}</p>
+            </c:if>
+        </div>
+        <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+ 
+    </div>
+
+    <br>
+
+    <div class="filtro-fecha">
         <%@include file="../template/fecha.html" %>
     </div>
     
+
+    <div class="footer-buttons">
+        <button id="create-Account" onclick="location.href='ContabilidadController?ruta=showFormAccount'">Crear Cuenta</button>
+        <button id="create-Category" onclick="location.href='ContabilidadController?ruta=showFormCategory'">Crear Categoría</button>
+        <button id="log-out" onclick="location.href='ContabilidadController?ruta=cerrarSesion'">Cerrar Sesión</button>
+    </div>
+
     <br>
     <div class="container">
         <div class="section">
-            <h2>Consolidado de las Cuentas</h2>
+            <h2 id="title-consolidated">Consolidado de las Cuentas</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
+                    <thead class="th-consolidated">
                         <tr>
                             <th>Nombre</th>
                             <th>Saldo</th>
@@ -31,7 +50,7 @@
                     </thead>
                     <tbody>
                         <c:forEach var="cuenta" items="${cuentas}">
-                            <tr>
+                            <tr class="tr-consolidated">
                                 <td><a href="ContabilidadController?ruta=showaccount&cuentaId=${cuenta.idAccount}">${cuenta.nameAccount}</a></td>
                                 <td>${cuenta.total}</td>
                                 <td><a href="ContabilidadController?ruta=registerFormIncome&cuentaId=${cuenta.idAccount}&origen=showdashboard">Registrar un Nuevo Ingreso</a></td>
@@ -45,10 +64,10 @@
         </div>
 
         <div class="section">
-            <h2>Categoría de Ingreso</h2>
+            <h2 id="title-income">Categoría de Ingreso</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
+                    <thead class="th-income">
                         <tr>
                             <th>Nombre de Categoría</th>
                             <th>Total</th>
@@ -56,7 +75,7 @@
                     </thead>
                     <tbody>
                         <c:forEach var="categoria" items="${ingresos}">
-                            <tr>
+                            <tr class="tr-income">
                                 <td><a href="ContabilidadController?ruta=showcategory&categoriaId=${categoria.idCategory}">${categoria.nameCategory}</a></td>
                                 <td>${totalIngresos[categoria.nameCategory]}</td>
                             </tr>
@@ -67,10 +86,10 @@
         </div>
 
         <div class="section">
-            <h2>Categoría de Egreso</h2>
+            <h2 id="title-outcome">Categoría de Egreso</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
+                    <thead class="th-outcome">
                         <tr>
                             <th>Nombre de Categoría</th>
                             <th>Total</th>
@@ -78,7 +97,7 @@
                     </thead>
                     <tbody>
                         <c:forEach var="categoria" items="${egresos}">
-                            <tr>
+                            <tr class="tr-outcome">
                                 <td><a href="ContabilidadController?ruta=showcategory&categoriaId=${categoria.idCategory}">${categoria.nameCategory}</a></td>
                                 <td>${totalEgresos[categoria.nameCategory]}</td>
                             </tr>
@@ -89,10 +108,10 @@
         </div>
 
         <div class="section">
-            <h2>Categoría de Transferencia</h2>
+            <h2 id="title-trans">Categoría de Transferencia</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
+                    <thead class="th-trans">
                         <tr>
                             <th>Nombre de Categoría</th>
                             <th>Total</th>
@@ -100,7 +119,7 @@
                     </thead>
                     <tbody>
                         <c:forEach var="categoria" items="${transferencias}">
-                            <tr>
+                            <tr class="tr-trans">
                                 <td><a href="ContabilidadController?ruta=showcategory&categoriaId=${categoria.idCategory}">${categoria.nameCategory}</a></td>
                                 <td>${totalTransferencias[categoria.nameCategory]}</td>
                             </tr>
@@ -111,10 +130,10 @@
         </div>
 
         <div class="section section-full">
-            <h2>Movimientos</h2>
+            <h2 id="title-consolidated">Movimientos</h2>
             <div class="table-responsive">
                 <table>
-                    <thead>
+                    <thead class="th-consolidated">
                         <tr>
                             <th>Concepto</th>
                             <th>Fecha</th>
@@ -136,7 +155,7 @@
                                 <td>${movimiento.category}</td>
                                 <td>
                                     <div class="actions">
-                                        <a href="ContabilidadController?ruta=UpdateFormMovement&idMovimiento=${movimiento.idMovement}">Editar</a>
+                                        <a href="ContabilidadController?ruta=UpdateFormMovement&idMovimiento=${movimiento.idMovement}" class="editar">Editar</a>
                                         <a href="#" class="eliminarMovimiento" data-id="${movimiento.idMovement}" data-nombre="${movimiento.concept}">Eliminar</a>
                                     </div>
                                 </td>
@@ -146,12 +165,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <div class="footer-buttons">
-        <button onclick="location.href='ContabilidadController?ruta=showFormAccount'">Crear Cuenta</button>
-        <button onclick="location.href='ContabilidadController?ruta=showFormCategory'">Crear Categoría</button>
-        <button onclick="location.href='ContabilidadController?ruta=cerrarSesion'">Cerrar Sesión</button>
     </div>
 
     <script type="text/javascript">
