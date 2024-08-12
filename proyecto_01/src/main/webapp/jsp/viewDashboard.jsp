@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/viewDashboard.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/viewDashboard.css">
 </head>
 <body>
     <br>
