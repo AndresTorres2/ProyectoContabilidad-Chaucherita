@@ -14,7 +14,7 @@
             <div class="title-header">
                 <h1>Detalles de la Categoría</h1>
             </div>
-            <img src="logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
+            <img src="images/logo-Chaucherita.webp" alt="Chaucherita Linces Logo">
         </div>
 
         <div class="filtro-fecha">
